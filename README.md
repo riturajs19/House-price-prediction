@@ -1,13 +1,31 @@
-# House-price-prediction
-This project focuses on building a machine learning model to predict house prices based on key features such as total square footage, number of bedrooms (BHK), and bathrooms. With real estate being a critical sector, accurate pricing models are useful for both buyers and sellers. The project involves data preprocessing, model training using Ridge Regression, and finally, deployment through a user-friendly web interface built with Flask.
+# House Price Prediction
+This project focuses on building a machine learning model to predict house prices based on key features such as total square footage, number of bedrooms (BHK), and bathrooms. With real estate being a critical sector, accurate pricing models are useful for both buyers and sellers. The project involves data preprocessing, model training using Ridge Regression, and deployment through user-friendly web interfaces built with Flask and Streamlit.
 
-# ⚙️ Methodology and Model
-We experimented with multiple regression algorithms and selected Ridge Regression for its ability to handle multicollinearity and produce robust predictions. The data was transformed using one-hot encoding for categorical features like location. Once the model was finalized, it was serialized using pickle and saved as RidgeModel.pkl.
+## ⚙️ Methodology and Model
+We experimented with multiple regression algorithms and selected Ridge Regression for its ability to handle multicollinearity and produce robust predictions. The data was transformed using one-hot encoding for categorical features like location. Once the model was finalized, it was serialized using pickle and saved as RidgeModel.pkl. The application takes four inputs from the user: location, number of bedrooms (BHK), number of bathrooms, and total square feet. These inputs are then passed to the trained model, which returns a price prediction.
 
-The application takes four inputs from the user: location, number of bedrooms (BHK), number of bathrooms, and total square feet. These are then passed to the trained model, which returns a price prediction. The entire backend logic is handled by a Flask application (main.py) that connects the HTML frontend with the machine learning model.
+Flask Version: The backend logic is handled by a Flask application (main.py), which connects an HTML frontend (in templates/) to the machine learning model.
 
-# 🚀 Deployment
-The project includes a simple web interface built using HTML (stored in the templates/ folder). Users can input property details directly into the form, and the Flask backend (main.py) processes the input and displays the predicted price. To run the project locally, install the required dependencies, launch the Flask app, and access it via http://localhost:5000 on your browser. To deploy it on platforms like Render, Heroku, or Replit, additional setup such as requirements.txt, Procfile, and runtime configuration may be needed.
+Streamlit Version: Alternatively, the app is implemented as a single interactive Streamlit app (app.py), which combines frontend and backend logic in one place for easy deployment and interaction.
 
-# ✅ Conclusion
-This project demonstrates a complete pipeline of a machine learning application — from data preprocessing to model training, evaluation, and deployment. It provides a practical example of how data science can be applied in real-world domains like real estate. The web interface makes it easy for non-technical users to interact with the model and get instant price predictions.
+## 🚀 Deployment
+Flask App:
+The Flask app provides a simple web interface built with HTML forms.
+To run locally:
+-Install dependencies from requirements.txt
+-Run python main.py
+-Access the app at http://localhost:5000
+For cloud deployment (e.g., Render, Heroku, Replit), you may need to add configuration files like Procfile, and set up environment variables.
+
+Streamlit App:
+The Streamlit app provides an interactive web interface accessible through the browser.
+-To run locally:
+-Install dependencies from requirements.txt
+-Run streamlit run app.py
+-Open the local URL shown in the terminal (http://localhost:8503/#house-price-prediction-app)
+Deploy easily on Streamlit Community Cloud by connecting your GitHub repository.
+
+## ✅ Conclusion
+This project demonstrates a full machine learning pipeline—from data preprocessing and model training to deployment with two popular web frameworks: Flask and Streamlit. The Flask version offers more control over frontend design using HTML templates, while the Streamlit version allows rapid prototyping and deployment with minimal setup.
+
+Both implementations make machine learning accessible to end users, enabling instant and accurate house price predictions through a clean and user-friendly web interface.
